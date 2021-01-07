@@ -12,7 +12,6 @@
     </div>
 
     <#include "parts/messageEdit.ftlh" />
-
     <#include "parts/messageList.ftlh" />
 
 </@co.page>
