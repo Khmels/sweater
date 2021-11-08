@@ -4,6 +4,7 @@ import com.example.sweater.domain.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.sweater.repos.MessageRepo;
 
@@ -26,6 +27,19 @@ public class GreetingController {
     public String main(Map<String, Object> model){
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
+        return "main";
+    }
+
+    @PostMapping
+    public String add(@RequestParam String text, @RequestParam String tag, Map<String, Object> model){
+        // save
+        Message message = new Message(text, tag);
+
+        messageRepo.save(message);
+        // adding to model
+        Iterable<Message> messages = messageRepo.findAll();
+        model.put("messages", messages);
+        // return to user
         return "main";
     }
 }
