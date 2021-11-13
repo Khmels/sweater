@@ -15,11 +15,12 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/").permitAll()
+                    .antMatchers("/", "/registration").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
@@ -49,8 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance())
-                .usersByUsernameQuery("SELECT username, password, active FROM usr WHERE username=?")
-                .authoritiesByUsernameQuery("SELECT u.username, ur.roles FROM " +
-                        "usr u inner join user_role ur on u.id=ur.user._id WHERE u.username=?");
+                .usersByUsernameQuery("select username, password, active from usr where username=?")
+                .authoritiesByUsernameQuery("select u.username, ur.roles from usr u inner join user_role ur on u.id = ur.user_id where u.username=?");
     }
 }
