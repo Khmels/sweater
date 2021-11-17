@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.sweater.repos.MessageRepo;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -20,7 +19,7 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
-        return "greeting";
+        return "greeting.ftl";
     }
 
     @GetMapping("/main")
