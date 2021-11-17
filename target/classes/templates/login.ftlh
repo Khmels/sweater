@@ -13,4 +13,4 @@ Login page
 </form>
 <a href="/registration">Add new user</a>
 </body>
-<au/html>
+</html>
