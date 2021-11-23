@@ -16,5 +16,4 @@ public class UserController {
     public String userList() {
         return "userList";
     }
-
 }
