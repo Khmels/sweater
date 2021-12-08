@@ -2,7 +2,7 @@ package com.example.sweater.domain;
 
 import javax.persistence.*;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class Message {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

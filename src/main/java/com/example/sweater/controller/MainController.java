@@ -43,14 +43,14 @@ public class MainController {
             @AuthenticationPrincipal User user,
             @RequestParam String text,
             @RequestParam String tag, Map<String, Object> model) {
-        // save
+
         Message message = new Message(text, tag, user);
 
         messageRepo.save(message);
-        // adding to model
+
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
-        // return to user
+
         return "main";
     }
 }
