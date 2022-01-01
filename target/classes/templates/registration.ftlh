@@ -3,6 +3,6 @@
 
 <@co.page>
 Add new user
-${message}
+${message?ifExists}
 <@l.login "/registration" />
 </@co.page>
