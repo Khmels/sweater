@@ -15,14 +15,8 @@ import java.util.UUID;
 
 @Service
 public class UserService implements UserDetailsService {
-    @Autowired                                  // Field injection is not recommended
+    @Autowired
     private UserRepo userRepo;
-
-//    private final UserRepo userRepo;          //Spring will search dependency by it's own
-//
-//    public UserService(UserRepo userRepo) {
-//        this.userRepo = userRepo;
-//    }
 
     @Autowired
     private MailSender mailSender;
