@@ -2,6 +2,8 @@
 
 mvn clean package
 
+echo 'The goal you specified requires a project to execute but there is no POM in this directory '
+
 echo  'Copy files...'
 
 scp -i ~/.ssh/id_rsa \
