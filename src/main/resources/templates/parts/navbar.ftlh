@@ -13,29 +13,30 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/main"><#if user??>Messages<#else>Log In</#if></a>
+                <a class="nav-link" href="/main"></a>
             </li>
             <#if user??>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/user-messages/${currentUserId}">My messages</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/main">Messages</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user-messages/${currentUserId}">My messages</a>
+                </li>
             </#if>
             <#if isAdmin>
-            <li class="nav-item">
-                <a class="nav-link" href="/user">User list</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">User list</a>
+                </li>
             </#if>
-            <#if user?? && name!="unknown">
-            <li class="nav-item">
-                <a class="nav-link" href="/user/profile">Profile</a>
-            </li>
+            <#if user??>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/profile">Profile</a>
+                </li>
             </#if>
         </ul>
 
-        <div class="navbar-text mr-3">${name}</div>
-        <#if user?? && name!="unknown">
+        <div class="navbar-text mr-3"><#if user??>${name}<#else>Please, log in</#if></div>
         <@l.logout />
-        </#if>
     </div>
 </nav>
