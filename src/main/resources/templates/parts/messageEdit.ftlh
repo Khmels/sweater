@@ -1,3 +1,4 @@
+<#include "security.ftlh">
 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Message
 </a>
@@ -16,7 +17,7 @@
             </div>
             <div class="form-group">
                 <input type="text" class="form-control ${(tagError??)?string('is-invalid', '')}"
-                       value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг">
+                       value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг"/>
                 <#if tagError??>
                     <div class="invalid-feedback">
                         ${tagError}
@@ -25,7 +26,7 @@
             </div>
             <div class="form-group">
                 <div class="custom-file">
-                    <input type="file" name="file" id="customFile">
+                    <input type="file" name="file" id="customFile"/>
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
             </div>
