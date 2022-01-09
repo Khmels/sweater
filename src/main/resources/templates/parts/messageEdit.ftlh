@@ -1,5 +1,5 @@
 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Message editor
+    Message
 </a>
 <div class="collapse <#if message??>show</#if>" id="collapseExample">
     <div class="form-group mt-3">
@@ -29,8 +29,8 @@
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
             </div>
-            <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <input type="hidden" name=id" value="<#if message??>${message.id}</#if>">
+            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+            <input type="hidden" name="id" value="<#if message??>${message.id}</#if>"/>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Save message</button>
             </div>
