@@ -1,11 +1,11 @@
 package com.example.sweater;
 
+import com.example.sweater.service.DumpPasswordEncoder;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class DumpPasswordEncoderTest {
     @Test

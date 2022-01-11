@@ -1,4 +1,4 @@
-package com.example.sweater;
+package com.example.sweater.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
