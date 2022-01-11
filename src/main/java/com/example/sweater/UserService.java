@@ -1,4 +1,4 @@
-package com.example.sweater.service;
+package com.example.sweater;
 
 import com.example.sweater.domain.Role;
 import com.example.sweater.domain.User;
