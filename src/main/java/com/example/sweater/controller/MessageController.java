@@ -64,6 +64,7 @@ public class MessageController {
             BindingResult bindingResult,
             Model model,
             @RequestParam("file") MultipartFile file,
+            @RequestParam(required = false, defaultValue = "") String filter,
             @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable
     ) throws IOException {
 
@@ -79,7 +80,7 @@ public class MessageController {
             messageRepo.save(message);
         }
 
-        Page<MessageDto> page = messageService.messageList(pageable, "", user);
+        Page<MessageDto> page = messageService.messageList(pageable, filter, user);
 //        Iterable<Message> messages = messageRepo.findAll();
 //        model.addAttribute("messages", messages);
         model.addAttribute("page", page);

@@ -11,7 +11,7 @@ public class RedirectInterceptor extends HandlerInterceptorAdapter {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         if (modelAndView != null) {
             String args = request.getQueryString() != null ? request.getQueryString() : "";
-            String url = request.getRequestURI().toString() + "?" + args;
+            String url = request.getRequestURI().toString() + "?" + "";
             response.setHeader("Turbolinks-Location", url);
         }
     }
