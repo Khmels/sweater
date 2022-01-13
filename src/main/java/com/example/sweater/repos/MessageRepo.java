@@ -38,5 +38,5 @@ public interface MessageRepo extends CrudRepository<Message, Long> {
             "FROM Message m LEFT JOIN m.likes ml " +
             "WHERE m.author = :author " +
             "GROUP BY m")
-    Page<MessageDto> findByUser(Pageable pageable, @Param("author") User author, @Param("user") User user);
+    Page<MessageDto> findByUser(Pageable pageable, @Param("user") User user, @Param("author") User author);
 }
